@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# LLM Context Files
+# https://artemisgharakhanian.github.io/llms.txt
+# https://artemisgharakhanian.github.io/llms-full.txt
+
+Sitemap: https://artemisgharakhanian.github.io/sitemap.xml

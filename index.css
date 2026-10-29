@@ -1,0 +1,518 @@
+/* ==========================================================================
+   Fonts (served locally) — Vazirmatn, SIL Open Font License (see assets/fonts/OFL.txt)
+   ========================================================================== */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Variables & base
+   ========================================================================== */
+:root {
+  --color-primary: #155e7e;      /* table header / dark teal */
+  --color-accent: #286eb4;       /* accessible blue headings (WCAG AA >= 5.2:1) */
+  --color-teal: #1fb5b5;
+  --color-green: #7cbf8e;
+  --color-text: #1f2328;
+  --color-muted: #555c66;
+  --color-row-odd: #d3d6db;
+  --color-row-even: #e7e9ec;
+  --color-bg: #f3f6f8;
+  --color-card: #ffffff;
+  --color-link: #9e4768;
+  --radius: 12px;
+  --shadow: 0 6px 24px rgba(21, 94, 126, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--color-text);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Page container
+   ========================================================================== */
+.page {
+  width: 100%;
+  max-width: 860px;
+  margin: 32px 16px;
+  padding: 40px 48px;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e3e8ec;
+}
+
+.hero__photo {
+  width: 170px;
+  height: auto;
+  aspect-ratio: 361 / 422;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.hero__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.hero__name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hero__role,
+.hero__desc {
+  color: var(--color-accent);
+}
+
+.hero__contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.hero__phone {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.hero__phone:hover {
+  color: var(--color-primary);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn--call,
+.btn--pdf {
+  background: var(--color-primary);
+}
+
+.btn--whatsapp {
+  background: #1c8548;
+}
+
+.hero__logo {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.section__title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.section__note {
+  font-weight: 500;
+}
+
+/* Lists */
+.bullets,
+.plain-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bullets li {
+  position: relative;
+  padding-right: 24px;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 0.75em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.resume-link {
+  color: var(--color-link);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.resume-link:hover {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Price tables
+   ========================================================================== */
+.price-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.price-table--narrow {
+  width: 92%;
+  margin-inline: auto;
+}
+
+.price-table th,
+.price-table td {
+  padding: 10px 12px;
+}
+
+.price-table thead th {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.price-table tbody th {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.price-table tbody tr:nth-child(odd) td {
+  background: var(--color-row-odd);
+}
+
+.price-table tbody tr:nth-child(even) td {
+  background: var(--color-row-even);
+}
+
+/* ==========================================================================
+   Shareable PDF download box
+   ========================================================================== */
+.pdf-share {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  padding: 20px 24px;
+  background: #f0f6fa;
+  border: 1px solid #d5e5f0;
+  border-radius: var(--radius);
+}
+
+.pdf-share__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pdf-share__desc {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+}
+
+.btn--pdf {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Reveal animation (enabled by index.js)
+   ========================================================================== */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .page {
+    margin: 16px;
+    padding: 28px 24px;
+  }
+
+  .hero {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero__info {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .hero__logo {
+    width: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  .page {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 24px 16px 32px;
+    gap: 28px;
+  }
+
+  .hero__photo {
+    width: 140px;
+  }
+
+  .hero__logo {
+    width: 70px;
+  }
+
+  .hero__name {
+    font-size: 1.5rem;
+  }
+
+  /* Tables become stacked cards */
+  .price-table,
+  .price-table--narrow {
+    width: 100%;
+  }
+
+  .price-table thead {
+    display: none;
+  }
+
+  .price-table,
+  .price-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-table tr {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .price-table tbody th {
+    text-align: center;
+  }
+
+  .price-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .price-table td::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: right;
+  }
+
+  .price-table tbody tr td:nth-of-type(1) {
+    background: var(--color-row-even);
+  }
+
+  .price-table tbody tr td:nth-of-type(2) {
+    background: var(--color-row-odd);
+  }
+
+  .pdf-share {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 16px;
+  }
+
+  .btn--pdf {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__photo {
+    width: 120px;
+  }
+
+  .hero__logo {
+    width: 60px;
+  }
+
+  .section__title {
+    font-size: 1.05rem;
+  }
+
+  .price-table td {
+    padding: 10px;
+  }
+}
